@@ -1,5 +1,4 @@
 import axios from 'axios'
-import React from 'react'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -26,21 +25,21 @@ const Signup = () => {
 
 
     // function to submit the details to the server
-    const handlesubmit=async(e)=>{
-      e.preventDefault()
-      setLoading("Please wait...")
-      setError("")
-    //   formdata
-    const formData=new FormData()
-    formData.append("username",username)
-    formData.append("email",email)
-    formData.append("password",password)
-    formData.append("phone",phone)
+    // const handlesubmit=async(e)=>{
+    //   e.preventDefault()
+    //   setLoading("Please wait...")
+    //   setError("")
+    // //   formdata
+    // const formData=new FormData()
+    // formData.append("username",username)
+    // formData.append("email",email)
+    // formData.append("password",password)
+    // formData.append("phone",phone)
 
    const submit = async (e)=>{
     e.preventDefault();
     setLoading("Please wait as we apload your data")
-   }
+   
 
     try {
         const data =new FormData()
@@ -49,7 +48,7 @@ const Signup = () => {
         data.append("password",password)
         data.append("phone",phone)
 
-        const response=await axios.post("https://ianson.alwaysdata.net/api/signup",formData)
+        const response=await axios.post("https://ianson.alwaysdata.net/api/signup",data)
         setLoading("")
         setSuccess(response.data.success)
         
@@ -66,7 +65,7 @@ const Signup = () => {
                 <h2>Sign up</h2>
                 
                 {/* form */}
-                <form action="" onSubmit={handlesubmit}>
+                <form action="" onSubmit={submit}>
                     {/* binding states */}
 
              <h4 className="text-primary">{success}</h4>
