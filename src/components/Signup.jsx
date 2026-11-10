@@ -51,6 +51,7 @@ const Signup = () => {
         const response=await axios.post("https://ianson.alwaysdata.net/api/signup",data)
         setLoading("")
         setSuccess(response.data.success)
+        navigate("/signin")
         
     } catch (error) {
         setLoading("")
