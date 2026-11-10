@@ -8,6 +8,7 @@ import Getproduct from './components/Getproduct';
 import Addproduct from './components/Addproduct';
 import Navbar from './components/Navbar';
 import CartSummary from './components/Cartsummary';
+import Footer from './components/Footer';
 // 1. Import your Cart Summary component
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/addproduct' element={<Addproduct/>}/>
           <Route path='/' element={<Getproduct/>}/>
+          <Route path='Footer'element={<Footer/>}/>
           
           {/* 2. Fixed the spelling typo 'elememt' -> 'element' */}
           <Route path='/mpesa' element={<Mpesa/>}/>
@@ -32,6 +34,7 @@ function App() {
           {/* 3. Added the new dynamic shopping cart route */}
           <Route path='/cart' element={<CartSummary/>}/>
         </Routes>
+        <Footer/>
       </div>
     </BrowserRouter>
   );
